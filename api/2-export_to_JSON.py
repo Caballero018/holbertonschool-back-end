@@ -21,15 +21,15 @@ def first_line(id):
         response2 = requests.get(todos_url).json()
 
         instance = {}
+        ins = {}
         for i in range(len(response)):
             if response[i]['id'] == id:
                 instance["{}".format(id)] = []
+                ins['username'] = response[i]['username']
                 for j in range(len(response2)):
                     if response2[j]['userId'] == id:
-                        ins = {k: v for k, v in response2[j].items()}
-                        if ins['title']:
-                            ins['task'] = ins['title']
-                            del ins['title']
+                        ins['completed'] = response2[j]['completed']
+                        ins['task'] = response2[j]['title']
                         instance["{}".format(id)].append(ins)
 
         with open("{}.json".format(id), 'w+') as f:
