@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Script to export data in the CSV format."""
-import requests
 import csv
+import requests
 from sys import argv
 
 
@@ -28,7 +28,8 @@ def script(id):
                             quoting=csv.QUOTE_ALL
                                             )
                         writer.writerow([
-                            id, response[i]['username'], response2[j]['completed'],
+                            id, response[i]['username'],
+                            response2[j]['completed'],
                             response2[j]['title']]
                             )
 
