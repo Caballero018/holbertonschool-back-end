@@ -27,9 +27,8 @@ def first_line(id):
                             == response[i]['id']:
                         writer = csv.writer(f)
                         writer.writerow([
-                            f"{id}", f"{response[i]['name']}",
-                            f"{response2[j]['completed']}",
-                            f"{response2[j]['title']}"
+                            id, response[i]['name'], response2[j]['completed'],
+                            response2[j]['title']
                             ])
 
 
