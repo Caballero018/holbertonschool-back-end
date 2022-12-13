@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Script that, using a REST API"""
-from sys import argv
 import requests
 
 
@@ -37,4 +36,5 @@ def first_line(id):
 
 
 if __name__ == "__main__":
+    from sys import argv
     first_line(argv[1])
