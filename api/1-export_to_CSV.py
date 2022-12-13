@@ -18,7 +18,7 @@ def script(id):
         response = requests.get(users_url).json()
         response2 = requests.get(todos_url).json()
 
-        with open(f"{id}.csv", "w", encoding='UTF8') as f:
+        with open("{}.csv".format(id), "w", encoding='UTF8') as f:
             for i in range(len(response)):
                 for j in range(len(response2)):
                     if response[i]['id'] == id and response2[j]['userId'] \
