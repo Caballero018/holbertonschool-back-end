@@ -26,13 +26,11 @@ def first_line(id):
                 instance["{}".format(id)] = []
                 for j in range(len(response2)):
                     if response2[j]['userId'] == id:
-                        ins = {k : v for k, v in response2[j].items()}
+                        ins = {k: v for k, v in response2[j].items()}
                         instance["{}".format(id)].append(ins)
 
         with open("{}.json".format(id), 'w+') as f:
             json.dump(instance, f)
-                    
-                    
 
 
 if __name__ == "__main__":
