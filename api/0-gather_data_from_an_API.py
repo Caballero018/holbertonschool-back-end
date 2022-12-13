@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Script that, using a REST API"""
-import requests
-from sys import argv
 import json
+from sys import argv
+import requests
 
 
 def first_line(id):
