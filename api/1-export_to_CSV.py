@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Script that, using a REST API"""
+"Script to export data in the CSV format."
 import requests
-import csv
 from sys import argv
+import csv
 
 
 def first_line(id):
@@ -25,8 +25,10 @@ def first_line(id):
                 for j in range(len(response2)):
                     if response[i]['id'] == id and response2[j]['userId'] \
                             == response[i]['id']:
-                        writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
-
+                        writer = csv.writer(
+                            f, delimiter=',', quotechar='"',
+                            quoting=csv.QUOTE_ALL
+                                            )
                         writer.writerow((
                             id, response[i]['name'], response2[j]['completed'],
                             response2[j]['title']
