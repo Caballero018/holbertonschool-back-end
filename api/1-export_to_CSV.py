@@ -6,7 +6,7 @@ import csv
 
 
 def script(id):
-    "Doc"
+    """Doc"""
     id = eval(id)
     users_url = "https://jsonplaceholder.typicode.com/users/"
     todos_url = "https://jsonplaceholder.typicode.com/todos/"
