@@ -32,10 +32,6 @@ def first_line(id):
                         if response2[j]['title'] or response2[j]['completed']:
                             ins = {k: v for k, v in response2[j].items()}
 
-                            if ins['title']:
-                                ins['task'] = ins['title']
-                                del ins['title']
-
                         instance["{}".format(id)].append(ins)
 
         with open("{}.json".format(id), 'w+') as f:
