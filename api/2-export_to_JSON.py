@@ -31,18 +31,20 @@ def first_line(id):
                         if response2[j]['title'] or response2[j]['completed']:
                             ins = {k: v for k, v in response2[j].items()}
                             ins['username'] = response[i]['username']
-                            if ins['id']:
-                                del ins['id']
-                            if ins['userId']:
-                                del ins['userId']
-                            if ins['title']:
-                                ins['task'] = ins['title']
-                                del ins['title']
+                            delete(ins)
                         instance["{}".format(id)].append(ins)
 
         with open("{}.json".format(id), 'w+') as f:
             json.dump(instance, f)
 
+def delete(ins):
+    if ins['id']:
+        del ins['id']
+    if ins['userId']:
+        del ins['userId']
+    if ins['title']:
+        ins['task'] = ins['title']
+        del ins['title']
 
 if __name__ == "__main__":
     first_line(argv[1])
