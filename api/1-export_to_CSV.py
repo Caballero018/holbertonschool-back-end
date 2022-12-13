@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Script to export data in the CSV format."""
-import csv
 import requests
+import csv
 from sys import argv
 
 
@@ -21,16 +21,16 @@ def script(id):
         with open("{}.csv".format(id), "w", encoding='UTF8') as f:
             for i in range(len(response)):
                 for j in range(len(response2)):
-                    if response[i]['id'] == id:
-                        if response2[j]['userId'] == response[i]['id']:
-                            writer = csv.writer(
-                                f, delimiter=',', quotechar='"',
-                                quoting=csv.QUOTE_ALL
-                                                )
-                            writer.writerow([
-                                id, response[i]['name'], response2[j]['completed'],
-                                response2[j]['title']
-                                ])
+                    if response[i]['id'] == id and response2[j]['userId'] \
+                            == response[i]['id']:
+                        writer = csv.writer(
+                            f, delimiter=',', quotechar='"',
+                            quoting=csv.QUOTE_ALL
+                                            )
+                        writer.writerow([
+                            id, response[i]['username'], response2[j]['completed'],
+                            response2[j]['title']]
+                            )
 
 
 if __name__ == "__main__":
