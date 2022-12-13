@@ -27,6 +27,9 @@ def first_line(id):
                 for j in range(len(response2)):
                     if response2[j]['userId'] == id:
                         ins = {k: v for k, v in response2[j].items()}
+                        if ins['title']:
+                            ins['task'] = ins['title']
+                            del ins['title']
                         instance["{}".format(id)].append(ins)
 
         with open("{}.json".format(id), 'w+') as f:
