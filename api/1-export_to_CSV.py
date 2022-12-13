@@ -8,9 +8,6 @@ import csv
 def script(id):
     "Doc"
     id = eval(id)
-    if type(id) != int:
-        raise TypeError("The data entered is not an integer type")
-
     users_url = "https://jsonplaceholder.typicode.com/users/"
     todos_url = "https://jsonplaceholder.typicode.com/todos/"
 
