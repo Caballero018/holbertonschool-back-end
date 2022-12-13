@@ -37,6 +37,7 @@ def first_line(id):
         with open("{}.json".format(id), 'w+') as f:
             json.dump(instance, f)
 
+
 def delete(ins):
     if ins['id']:
         del ins['id']
