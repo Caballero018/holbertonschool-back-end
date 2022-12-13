@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that, using a REST API"""
+"""Script to export data in the JSON format."""
 import json
 import requests
 from sys import argv
