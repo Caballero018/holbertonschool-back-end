@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Script to export data in the CSV format."""
 import requests
-from sys import argv
 import csv
+from sys import argv
 
 
 def script(id):
