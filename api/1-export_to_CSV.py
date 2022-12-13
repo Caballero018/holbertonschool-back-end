@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"Script to export data in the CSV format."
+"""Script to export data in the CSV format."""
 import requests
 from sys import argv
 import csv
 
 
-def first_line(id):
+def script(id):
+    "Doc"
     id = eval(id)
     if type(id) != int:
         raise TypeError("The data entered is not an integer type")
@@ -36,4 +37,4 @@ def first_line(id):
 
 
 if __name__ == "__main__":
-    first_line(argv[1])
+    script(argv[1])
