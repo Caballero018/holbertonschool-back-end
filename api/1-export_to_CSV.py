@@ -27,10 +27,10 @@ def script(id):
                                 f, delimiter=',', quotechar='"',
                                 quoting=csv.QUOTE_ALL
                                                 )
-                            writer.writerow((
+                            writer.writerow([
                                 id, response[i]['name'], response2[j]['completed'],
                                 response2[j]['title']
-                                ))
+                                ])
 
 
 if __name__ == "__main__":
